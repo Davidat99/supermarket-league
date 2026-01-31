@@ -1,0 +1,73 @@
+/* ============================================
+   SUPERMARKET LEAGUE PRO - Mobile Responsive
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 992px) {
+    body { padding: 0.5rem; }
+    .header h1 { font-size: 2rem; }
+    .header { padding: 1.5rem; }
+    .nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    body { padding: 0.25rem; }
+    .header { padding: 1rem; margin-bottom: 1rem; }
+    .header h1 { font-size: 1.5rem; }
+    .header p { font-size: 0.75rem; }
+    .league-selector { padding: 1rem; margin-bottom: 1rem; }
+    .nav-buttons { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 0.4rem; 
+        margin-bottom: 1rem; 
+    }
+    .nav-btn { 
+        padding: 0.6rem 0.5rem; 
+        font-size: 0.75rem; 
+        min-width: auto; 
+    }
+    .card { padding: 1rem; }
+    .match-card { padding: 1rem; margin-bottom: 1rem; }
+    .team-logo { width: 36px; height: 36px; }
+    .team-logo-sm { width: 24px; height: 24px; }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    body { padding: 0; }
+    .header { 
+        padding: 0.75rem; 
+        margin-bottom: 0.75rem; 
+        border-radius: 0.5rem; 
+    }
+    .header h1 { font-size: 1.2rem; }
+    .header p { font-size: 0.65rem; }
+    .league-selector { padding: 0.75rem; margin-bottom: 0.75rem; }
+    .nav-buttons { gap: 0.3rem; }
+    .nav-btn { padding: 0.5rem 0.25rem; font-size: 0.7rem; }
+    .btn-primary { padding: 0.5rem 1rem; font-size: 0.75rem; }
+    .card { padding: 0.75rem; border-radius: 0.5rem; }
+    .match-card { padding: 0.75rem; }
+}
+
+/* Touch optimization */
+@media (pointer: coarse) {
+    .nav-btn, .btn-primary { min-height: 44px; }
+    select { min-height: 44px; font-size: 16px; }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header { padding: 0.5rem; margin-bottom: 0.5rem; }
+    .header h1 { font-size: 1.2rem; }
+    .card { padding: 0.75rem; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

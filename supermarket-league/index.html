@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket League PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚽ SUPERMARKET LEAGUE PRO</h1>
+            <p>Sistema Multi-Liga con Horarios Reales Sincronizados</p>
+        </div>
+
+        <div class="league-selector">
+            <label>🏆 Seleccionar Liga</label>
+            <select id="leagueSelector" onchange="handleLeagueChange()">
+                <option value="">-- Seleccionar Liga --</option>
+            </select>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="nav-btn active" onclick="UI.showTab('today')">📅 Hoy</button>
+            <button class="nav-btn" onclick="UI.showTab('upcoming')">🔮 Próximos</button>
+            <button class="nav-btn" onclick="UI.showTab('standings')">📊 Clasificación</button>
+            <button class="nav-btn" onclick="UI.showTab('teams')">👥 Equipos</button>
+            <button class="nav-btn" onclick="UI.showTab('stats')">🏆 Estadísticas</button>
+            <button class="nav-btn" onclick="UI.showTab('admin')">⚙ Admin</button>
+        </div>
+
+        <div id="todayTab" class="card">
+            <h2 style="color: #10b981; margin-bottom: 1.5rem;">📅 PARTIDOS DE HOY</h2>
+            <div id="todayMatches"></div>
+        </div>
+
+        <div id="upcomingTab" class="card hidden">
+            <h2 style="color: #10b981; margin-bottom: 1.5rem;">🔮 PRÓXIMOS PARTIDOS</h2>
+            <div id="upcomingMatches"></div>
+        </div>
+
+        <div id="standingsTab" class="card hidden">
+            <h2 style="color: #10b981; margin-bottom: 1.5rem;">📊 CLASIFICACIÓN</h2>
+            <div id="standingsTable"></div>
+        </div>
+
+        <div id="teamsTab" class="card hidden">
+            <h2 style="color: #10b981; margin-bottom: 1.5rem;">👥 EQUIPOS</h2>
+            <div id="teamsGrid"></div>
+        </div>
+
+        <div id="statsTab" class="card hidden">
+            <h2 style="color: #10b981; margin-bottom: 1.5rem;">🏆 ESTADÍSTICAS</h2>
+            <div id="statsContent"></div>
+        </div>
+
+        <div id="adminTab" class="card hidden">
+            <h2 style="color: #10b981; margin-bottom: 1.5rem;">⚙ PANEL DE ADMINISTRACIÓN</h2>
+            <div style="background: rgba(239, 68, 68, 0.1); border: 2px solid #ef4444; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 2rem;">
+                <h3 style="color: #ef4444; margin-bottom: 1rem;">🎮 MODO DEMO</h3>
+                <button class="btn-primary btn-danger" onclick="createLiveMatchDemo()">
+                    🔴 Crear Partido EN VIVO Ahora
+                </button>
+            </div>
+            <button class="btn-primary btn-danger" onclick="clearAllData()" style="margin-top: 1rem;">
+                🗑 Limpiar Todos los Datos
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts en orden de dependencias -->
+    <script src="js/storage.js"></script>
+    <script src="js/teams-data.js"></script>
+    <script src="js/match-live.js"></script>
+    <script src="js/scheduler.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

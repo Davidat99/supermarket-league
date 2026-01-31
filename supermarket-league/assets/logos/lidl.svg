@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="10" fill="#0050AA"/>
+  <rect x="10" y="40" width="80" height="20" fill="#FFF200"/>
+  <text x="50" y="56" font-family="Arial Black" font-size="20" fill="#0050AA" text-anchor="middle" font-weight="bold">LIDL</text>
+</svg>
